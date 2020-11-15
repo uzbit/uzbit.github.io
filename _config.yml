@@ -1,0 +1,12 @@
+# Site settings
+title: wootrex, llc
+email: ted@wootrex.biz
+description: > # this means to ignore newlines until "baseurl:"
+  dev with woot!
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://locahost:4000" # the base hostname & protocol for your site
+twitter_username: uzbit
+github_username:  uzbit
+
+# Build settings
+markdown: kramdown
