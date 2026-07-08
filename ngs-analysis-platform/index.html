@@ -1,0 +1,237 @@
+---
+layout: default
+title: NGS Analysis Platform
+---
+
+	<!-- Banner / Hero -->
+		<section id="banner">
+			<div class="inner">
+				<header>
+					<h2>NGS Analysis Platform</h2>
+				</header>
+				<p>Run your sequencing analysis in the browser &mdash; from raw reads to publishable results</p>
+				<footer>
+					<ul class="buttons">
+						<li><a href="https://ngs-analysis.com/" class="button special">Get Started</a></li>
+						<li><a href="/contact.html" class="button">Talk to Us</a></li>
+					</ul>
+				</footer>
+			</div>
+		</section>
+
+	<!-- Main -->
+		<article id="main">
+
+			<!-- Intro -->
+				<header class="special container">
+					<span class="icon fa-flask"></span>
+					<h2>One hosted platform for your NGS pipelines</h2>
+					<p>Upload your FASTQ, pick an analysis, and download results &mdash; no tools to install and no
+					infrastructure to run. The platform bundles read QC and trimming, amplicon diversity, RNA-seq
+					expression, and de novo assembly, and the analyses chain together into pipelines &mdash; each one can
+					take the previous job's output as its input. A native C++ engine keeps large runs fast, and cloud
+					workers scale up on demand. Works with Oxford Nanopore, Illumina, and PacBio data.</p>
+				</header>
+
+			<!-- Analyses built in -->
+				<section class="wrapper style1 container special">
+					<header class="major">
+						<h2>Analyses built in</h2>
+					</header>
+					<div class="row">
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-random"></span>
+								<header>
+									<h3>Demultiplexing</h3>
+								</header>
+								<p>Sort pooled reads into per-sample bins by barcode, with fuzzy matching modeled on Oxford
+								Nanopore's dorado &mdash; including double-ended native barcode kits &mdash; plus quality
+								filtering and barcode QC plots.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-cubes"></span>
+								<header>
+									<h3>Clustering</h3>
+								</header>
+								<p>Collapse near-identical sequences into representative centroids with minimizer-accelerated
+								greedy clustering. Dedupe a reference database at strain level, or squeeze redundant nanopore
+								reads before analysis while preserving true abundance.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-bar-chart"></span>
+								<header>
+									<h3>Diversity Analysis</h3>
+								</header>
+								<p>Map reads to your reference with BLAST+ and an edlib verification step, then compute
+								per-sample Richness, Shannon, Simpson, and Pielou's evenness, with cluster abundance tables
+								ready to drop into a figure.</p>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-line-chart"></span>
+								<header>
+									<h3>Differential Expression</h3>
+								</header>
+								<p>Quantify RNA-seq gene expression and call up- and down-regulated genes between two groups
+								with DESeq2 &mdash; with volcano plots, MA plots, PCA, and clustered sample heatmaps
+								alongside the full ranked gene table.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-share-alt"></span>
+								<header>
+									<h3>Gene Set Enrichment</h3>
+								</header>
+								<p>Turn a ranked gene list into the biological pathways behind it. GSEA reports enrichment
+								scores, significance, and the leading-edge genes, with running-score and dot plots for the
+								top gene sets.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-code-fork"></span>
+								<header>
+									<h3>De novo Assembly</h3>
+								</header>
+								<p>Reconstruct genomes and amplicons with no reference using SPAdes &mdash; get contigs, N50,
+								GC content, and an assembly graph, including a dedicated mode for polyclonal amplicon
+								libraries such as antibody repertoires.</p>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- Differentiators -->
+				<section class="wrapper style2 container special">
+					<header class="major">
+						<h2>Built to handle real sequencing runs</h2>
+					</header>
+					<div class="row">
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-bolt"></span>
+								<header>
+									<h3>Fast by design</h3>
+								</header>
+								<p>The heavy lifting is native C++ &mdash; edlib alignment, BLAST+, and minimizer sketching,
+								parallelized with OpenMP. An in-house candidate index narrows each search to a tiny slice of
+								the reference, so the alignment that follows runs an order of magnitude faster with identical
+								results.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-cloud"></span>
+								<header>
+									<h3>Scales on demand</h3>
+								</header>
+								<p>A cloud worker pool wakes up when jobs are queued and shuts itself down when idle, so a
+								big run gets a big machine &mdash; without paying for hardware that sits idle between
+								experiments.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-check"></span>
+								<header>
+									<h3>Nothing to install</h3>
+								</header>
+								<p>Upload compressed FASTQ in the browser, watch jobs run live with progress and queue
+								position, and download ready-to-use result archives. Organize everything into projects and
+								reuse pinned reference files across them.</p>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- Workflow -->
+				<section class="wrapper style3 container special">
+					<header class="major">
+						<h2>Three steps from data to answer</h2>
+					</header>
+					<div class="row">
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-upload"></span>
+								<header>
+									<h3>1. Upload</h3>
+								</header>
+								<p>Bring your compressed FASTQ reads and any reference or barcode files, grouped into a
+								project. Pin the files you reuse across experiments.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-cog"></span>
+								<header>
+									<h3>2. Choose an analysis</h3>
+								</header>
+								<p>Pick a job type, select your inputs &mdash; or a previous job's output &mdash; and tune the
+								parameters, which start from sensible defaults.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<span class="icon featured fa-download"></span>
+								<header>
+									<h3>3. Download results</h3>
+								</header>
+								<p>Review metrics and plots in the browser as the job runs, then download a complete,
+								reproducible archive when it finishes.</p>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- Outputs + who it's for -->
+				<section class="wrapper style1 container special">
+					<div class="row">
+						<div class="6u">
+							<section>
+								<span class="icon featured fa-file-text-o"></span>
+								<header>
+									<h3>Results you can publish</h3>
+								</header>
+								<p>Every job produces a downloadable archive: structured metrics, human-readable summaries,
+								and figures &mdash; diversity indices and abundance tables, volcano plots and expression
+								heatmaps, enrichment plots, QC reports, assembly stats &mdash; alongside the exact parameters
+								used, so every run is reproducible.</p>
+							</section>
+						</div>
+						<div class="6u">
+							<section>
+								<span class="icon featured fa-users"></span>
+								<header>
+									<h3>Who it's for</h3>
+								</header>
+								<p>Molecular biology and synthetic biology labs that would rather run analyses than maintain
+								them: amplicon and 16S community profiling, nanopore sequencing QC, antibody and
+								variant-library characterization, directed-evolution screens, and RNA-seq transcriptomics.</p>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- Final CTA -->
+				<header class="special container">
+					<span class="icon fa-flask"></span>
+					<h2>Ready to analyze your reads?</h2>
+					<p>Start a project on the platform, or get in touch and we'll help you map your workflow onto it.</p>
+					<footer>
+						<ul class="buttons">
+							<li><a href="https://ngs-analysis.com/" class="button special">Get Started</a></li>
+							<li><a href="/contact.html" class="button">Contact Us</a></li>
+						</ul>
+					</footer>
+				</header>
+
+		</article>
