@@ -9,7 +9,7 @@ title: NGS Analysis Platform
 				<header>
 					<h2>NGS Analysis Platform</h2>
 				</header>
-				<p>Run your sequencing analysis in the browser &mdash; from raw reads to publishable results</p>
+				<p>Turn your sequencing data into answers &mdash; right in your web browser</p>
 				<footer>
 					<ul class="buttons">
 						<li><a href="https://ngs-analysis.com/" class="button special">Get Started</a></li>
@@ -25,12 +25,13 @@ title: NGS Analysis Platform
 			<!-- Intro -->
 				<header class="special container">
 					<span class="icon fa-flask"></span>
-					<h2>One hosted platform for your NGS pipelines</h2>
-					<p>Upload your FASTQ, pick an analysis, and download results &mdash; no tools to install and no
-					infrastructure to run. The platform bundles read QC and trimming, amplicon diversity, RNA-seq
-					expression, and de novo assembly, and the analyses chain together into pipelines &mdash; each one can
-					take the previous job's output as its input. A native C++ engine keeps large runs fast, and cloud
-					workers scale up on demand. Works with Oxford Nanopore, Illumina, and PacBio data.</p>
+					<h2>Everything after the sequencer, in one place</h2>
+					<p>Upload your sequencing files, choose an analysis, and download your results. There's nothing to
+					install and no command line &mdash; it all runs in your web browser. Read cleanup, sample sorting,
+					diversity, RNA-seq, and assembly are all built in, and each analysis can start from the results of
+					the last one, so you can run a whole workflow end to end. Large studies run on powerful cloud
+					computers, so a big dataset finishes just as smoothly as a small one. Works with Oxford Nanopore,
+					Illumina, and PacBio data.</p>
 				</header>
 
 			<!-- Analyses built in -->
@@ -45,9 +46,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Demultiplexing</h3>
 								</header>
-								<p>Sort pooled reads into per-sample bins by barcode, with fuzzy matching modeled on Oxford
-								Nanopore's dorado &mdash; including double-ended native barcode kits &mdash; plus quality
-								filtering and barcode QC plots.</p>
+								<p>Sort a pooled sequencing run back into its individual samples by their barcodes.
+								Error-tolerant matching copes with noisy reads and double-barcoded Nanopore kits, weak reads
+								are filtered out, and QC plots show how cleanly each sample came apart.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -56,9 +57,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Clustering</h3>
 								</header>
-								<p>Collapse near-identical sequences into representative centroids with minimizer-accelerated
-								greedy clustering. Dedupe a reference database at strain level, or squeeze redundant nanopore
-								reads before analysis while preserving true abundance.</p>
+								<p>Group near-identical sequences together and keep one representative for each group. Use it
+								to trim a reference set down to its unique strains, or to condense repetitive reads before
+								analysis &mdash; without losing track of how abundant each one was.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -67,9 +68,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Diversity Analysis</h3>
 								</header>
-								<p>Map reads to your reference with BLAST+ and an edlib verification step, then compute
-								per-sample Richness, Shannon, Simpson, and Pielou's evenness, with cluster abundance tables
-								ready to drop into a figure.</p>
+								<p>Match your reads against a reference set to see what's in each sample and how much of it,
+								then get the standard diversity measures &mdash; richness, Shannon, Simpson, and evenness
+								&mdash; plus abundance tables ready to drop into a figure.</p>
 							</section>
 						</div>
 					</div>
@@ -80,9 +81,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Differential Expression</h3>
 								</header>
-								<p>Quantify RNA-seq gene expression and call up- and down-regulated genes between two groups
-								with DESeq2 &mdash; with volcano plots, MA plots, PCA, and clustered sample heatmaps
-								alongside the full ranked gene table.</p>
+								<p>Measure gene expression from RNA-seq and find the genes that go up or down between two
+								conditions. You get volcano plots, PCA, and expression heatmaps alongside the full results
+								table &mdash; computed with the widely used DESeq2 method.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -91,9 +92,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Gene Set Enrichment</h3>
 								</header>
-								<p>Turn a ranked gene list into the biological pathways behind it. GSEA reports enrichment
-								scores, significance, and the leading-edge genes, with running-score and dot plots for the
-								top gene sets.</p>
+								<p>See which biological pathways are driving your results. Gene set enrichment (GSEA) takes
+								your ranked list of genes and highlights the pathways and gene sets that stand out, with clear
+								plots of the strongest hits.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -102,9 +103,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>De novo Assembly</h3>
 								</header>
-								<p>Reconstruct genomes and amplicons with no reference using SPAdes &mdash; get contigs, N50,
-								GC content, and an assembly graph, including a dedicated mode for polyclonal amplicon
-								libraries such as antibody repertoires.</p>
+								<p>Rebuild full-length sequences from your reads when you have no reference to compare
+								against. You get the assembled sequences and standard quality stats like N50, plus a dedicated
+								mode for mixed amplicon libraries such as antibody repertoires.</p>
 							</section>
 						</div>
 					</div>
@@ -120,23 +121,22 @@ title: NGS Analysis Platform
 							<section>
 								<span class="icon featured fa-bolt"></span>
 								<header>
-									<h3>Fast by design</h3>
+									<h3>Fast, even on big data</h3>
 								</header>
-								<p>The heavy lifting is native C++ &mdash; edlib alignment, BLAST+, and minimizer sketching,
-								parallelized with OpenMP. An in-house candidate index narrows each search to a tiny slice of
-								the reference, so the alignment that follows runs an order of magnitude faster with identical
-								results.</p>
+								<p>The platform is tuned to move quickly through large datasets. A smart first pass skips the
+								comparisons that can't matter and spends its time only on the ones that do &mdash; so analyses
+								that used to take hours come back much sooner, with no shortcuts on accuracy.</p>
 							</section>
 						</div>
 						<div class="4u">
 							<section>
 								<span class="icon featured fa-cloud"></span>
 								<header>
-									<h3>Scales on demand</h3>
+									<h3>Scales when you need it</h3>
 								</header>
-								<p>A cloud worker pool wakes up when jobs are queued and shuts itself down when idle, so a
-								big run gets a big machine &mdash; without paying for hardware that sits idle between
-								experiments.</p>
+								<p>Your analyses run on powerful cloud computers that switch on only when you have work to do.
+								A large study gets the horsepower it needs, and you're not paying for a machine that sits idle
+								between experiments.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -145,9 +145,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Nothing to install</h3>
 								</header>
-								<p>Upload compressed FASTQ in the browser, watch jobs run live with progress and queue
-								position, and download ready-to-use result archives. Organize everything into projects and
-								reuse pinned reference files across them.</p>
+								<p>Everything happens in your browser &mdash; upload your files, watch each analysis run in
+								real time, and download the results when it's done. Keep your work organized in projects, and
+								pin the reference files you reach for again and again.</p>
 							</section>
 						</div>
 					</div>
@@ -165,8 +165,8 @@ title: NGS Analysis Platform
 								<header>
 									<h3>1. Upload</h3>
 								</header>
-								<p>Bring your compressed FASTQ reads and any reference or barcode files, grouped into a
-								project. Pin the files you reuse across experiments.</p>
+								<p>Add your sequencing files, along with any reference or barcode files, and group them
+								together in a project.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -175,8 +175,8 @@ title: NGS Analysis Platform
 								<header>
 									<h3>2. Choose an analysis</h3>
 								</header>
-								<p>Pick a job type, select your inputs &mdash; or a previous job's output &mdash; and tune the
-								parameters, which start from sensible defaults.</p>
+								<p>Pick an analysis and select your files &mdash; or the results of an earlier step. Every
+								setting starts from a sensible default, so you can simply run it.</p>
 							</section>
 						</div>
 						<div class="4u">
@@ -185,8 +185,8 @@ title: NGS Analysis Platform
 								<header>
 									<h3>3. Download results</h3>
 								</header>
-								<p>Review metrics and plots in the browser as the job runs, then download a complete,
-								reproducible archive when it finishes.</p>
+								<p>Watch the numbers and plots come together as it runs, then download everything &mdash; ready
+								to share or publish &mdash; when it's finished.</p>
 							</section>
 						</div>
 					</div>
@@ -201,10 +201,10 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Results you can publish</h3>
 								</header>
-								<p>Every job produces a downloadable archive: structured metrics, human-readable summaries,
-								and figures &mdash; diversity indices and abundance tables, volcano plots and expression
-								heatmaps, enrichment plots, QC reports, assembly stats &mdash; alongside the exact parameters
-								used, so every run is reproducible.</p>
+								<p>Every analysis hands you a complete set of results to download: the numbers,
+								plain-language summaries, and ready-made figures &mdash; diversity tables, volcano plots and
+								heatmaps, QC reports, assembly stats, and more. The exact settings you used are saved with
+								every run, so your work is always reproducible.</p>
 							</section>
 						</div>
 						<div class="6u">
@@ -213,9 +213,9 @@ title: NGS Analysis Platform
 								<header>
 									<h3>Who it's for</h3>
 								</header>
-								<p>Molecular biology and synthetic biology labs that would rather run analyses than maintain
-								them: amplicon and 16S community profiling, nanopore sequencing QC, antibody and
-								variant-library characterization, directed-evolution screens, and RNA-seq transcriptomics.</p>
+								<p>Molecular biology and synthetic biology labs that want answers from their sequencing data
+								without becoming bioinformaticians: amplicon and 16S community profiling, Nanopore QC, antibody
+								and variant-library characterization, directed-evolution screens, and RNA-seq.</p>
 							</section>
 						</div>
 					</div>
@@ -225,7 +225,7 @@ title: NGS Analysis Platform
 				<header class="special container">
 					<span class="icon fa-flask"></span>
 					<h2>Ready to analyze your reads?</h2>
-					<p>Start a project on the platform, or get in touch and we'll help you map your workflow onto it.</p>
+					<p>Start a project on the platform, or get in touch and we'll help you get your workflow set up.</p>
 					<footer>
 						<ul class="buttons">
 							<li><a href="https://ngs-analysis.com/" class="button special">Get Started</a></li>
